@@ -1,0 +1,18 @@
+services:
+  liveupdate:
+    ports:
+      - 0.0.0.0:3000:3000
+    build:
+      context: .
+    environment:
+      - APP_ENV=prod
+
+  db:
+    ports:
+      - 0.0.0.0:3306:3306
+    image: mysql:5.7
+    environment:
+      MYSQL_USER: "liveupdate"
+      MYSQL_PASSWORD: "mDtCaRy9x6A9rVxw"
+      MYSQL_DATABASE: "liveupdate"
+      MYSQL_RANDOM_ROOT_PASSWORD: "true"
